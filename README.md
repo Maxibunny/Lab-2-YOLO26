@@ -4,7 +4,7 @@
 
 **Вариант 5.** `0 — chair (стул)`, `1 — table (стол)`, `2 — bed (кровать)`, `3 — couch (диван)`.
 
-> **Статус:** обучение и экспорт модели подтверждены сохранёнными результатами Google Colab. Сборка и запуск APK на физическом Android-устройстве, успешный запуск Docker на стороннем ПК и качество на независимом тесте преподавателя должны быть проверены отдельно. Валидационная метрика не заменяет тестовую.
+> **Статус:** обучение и экспорт модели подтверждены сохранёнными результатами Google Colab. Сборка и запуск APK на физическом Android-устройстве, успешный запуск Docker на стороннем ПК и качество на независимом тесте должны быть проверены отдельно. Валидационная метрика не заменяет тестовую.
 
 ## 1. Результат обучения
 
@@ -35,7 +35,7 @@
 
 ## 3. Где скачать веса и размеченный датасет
 
-**[Папка с материалами в Google Drive](https://drive.google.com/drive/u/0/folders/1At6BhubWZABF40FQ_W-4dRtwUxH9f1NS)** — ссылка предоставлена автором проекта. Доступность файлов по ссылке и права скачивания необходимо проверить. Если их нет в общей папке, автору нужно разместить указанные архивы в доступном по ссылке каталоге.
+**[Папка с материалами в Google Drive](https://drive.google.com/drive/u/0/folders/1At6BhubWZABF40FQ_W-4dRtwUxH9f1NS)**. 
 
 Скачайте два файла, созданных в Colab:
 
@@ -49,11 +49,11 @@
 Клонируйте GitHub-репозиторий с submodule (подставьте URL своего репозитория):
 
 ```powershell
-git clone --recurse-submodules https://github.com/USERNAME/Lab2_YOLO26_Furniture.git
-cd Lab2_YOLO26_Furniture
+git clone --recurse-submodules https://github.com/USERNAME/Lab2_YOLO26.git
+cd Lab2_YOLO26
 ```
 
-Скопируйте скачанные `prepared.zip` и `results_bundle.zip` **в текущую папку** `Lab2_YOLO26_Furniture`. Затем выполните:
+Скопируйте скачанные `prepared.zip` и `results_bundle.zip` **в текущую папку** `Lab2_YOLO26`. Затем выполните:
 
 ```powershell
 Expand-Archive -LiteralPath '.\prepared.zip' -DestinationPath '.\dataset' -Force
@@ -159,7 +159,7 @@ powershell -ExecutionPolicy Bypass -File .\bootstrap_gradle_windows.ps1
 
 Затем запустите приложение на Android-телефоне с USB-отладкой. Проверьте обнаружение мебели на фотографиях, выполните «Профилирование (12 запусков)» (2 прогрева, 10 измерений), сохраните CSV с временем инференса и скриншоты распознавания. Без APK, работающего на устройстве, эти пункты нельзя считать выполненными.
 
-## 6. Оценка на независимом тесте преподавателя
+## 6. Оценка на независимом тесте
 
 После получения тестовых фотографий с YOLO-разметкой создайте `dataset/instructor_test/images/test/`, `dataset/instructor_test/labels/test/` и `dataset/instructor_test/test.yaml`. В `test.yaml` должен быть верный `path` и тот же порядок классов `chair`, `table`, `bed`, `couch`.
 
@@ -167,7 +167,7 @@ powershell -ExecutionPolicy Bypass -File .\bootstrap_gradle_windows.ps1
 python .\scripts\evaluate_test.py --weights .\runs\best.pt --test-data .\dataset\instructor_test\test.yaml
 ```
 
-Результат — тестовая метрика `map50_test` (требуется **не менее 0,8**). Пока тест преподавателя не предоставлен, значение неизвестно.
+Результат — тестовая метрика `map50_test` (требуется **не менее 0,8**). Пока тест не предоставлен, значение неизвестно.
 
 ## 7. Содержимое репозитория
 
