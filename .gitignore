@@ -1,0 +1,48 @@
+# Large training datasets, model weights and archives are downloaded separately
+/dataset/prepared/
+/dataset/instructor_test/
+/dataset/raw/images/**/*
+/dataset/raw/labels/**/*
+!/dataset/raw/images/**/
+!/dataset/raw/labels/**/
+!/dataset/raw/images/**/.gitkeep
+!/dataset/raw/labels/**/.gitkeep
+
+/runs/*
+!/runs/.gitkeep
+/runs-docker/
+*.pt
+*.pth
+*.tflite
+*.onnx
+*.engine
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.cache
+
+# Android / Gradle build output
+/android/.gradle/
+/android/.idea/
+/android/build/
+/android/app/build/
+*.apk
+*.aab
+*.iml
+/local.properties
+/android/local.properties
+
+# Local virtualenv and Python caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS / IDE files
+.DS_Store
+Thumbs.db
+.vscode/

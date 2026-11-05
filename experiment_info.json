@@ -1,0 +1,61 @@
+{
+  "run_id": "furniture_yolo26n_640_v2",
+  "config": {
+    "run_id": "furniture_yolo26n_640_v2",
+    "epochs": 100,
+    "imgsz": 640,
+    "batch": 8,
+    "patience": 25,
+    "workers": 2,
+    "seed": 42,
+    "ultralytics_commit": "c4e0ba9310ca5c567adb2b02f351f4d721557c71",
+    "dataset_fingerprint": "0b4d15a7442f958547fc7462b2656ee6ccc42fe7419b1c4f1bac4f203e6311d4"
+  },
+  "dataset_counts": {
+    "train": {
+      "images": 2285,
+      "labels": 2285,
+      "objects": {
+        "bed": 150,
+        "couch": 2074,
+        "table": 2561,
+        "chair": 2208
+      }
+    },
+    "val": {
+      "images": 404,
+      "labels": 404,
+      "objects": {
+        "chair": 305,
+        "table": 469,
+        "couch": 398,
+        "bed": 22
+      }
+    }
+  },
+  "export_info": {
+    "best_pt_sha256": "3a7ca1313753fcb684fccd12cd46e24ae986220bd058e0933777a49901975942",
+    "imgsz": 640,
+    "model_file": "/content/Lab2_YOLO26_Furniture/android/app/src/main/assets/best.tflite",
+    "model_bytes": 9895025,
+    "labels": [
+      "chair",
+      "table",
+      "bed",
+      "couch"
+    ],
+    "input_shape": [
+      1,
+      3,
+      640,
+      640
+    ],
+    "output_shape": [
+      1,
+      8,
+      8400
+    ],
+    "input_dtype": "<class 'numpy.float32'>",
+    "output_dtype": "<class 'numpy.float32'>"
+  }
+}

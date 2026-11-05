@@ -1,0 +1,4 @@
+After training in Google Colab or Docker, run:
+python scripts/export_litert.py
+This will create best.tflite in this directory.
+The app is not able to detect objects until that file exists.

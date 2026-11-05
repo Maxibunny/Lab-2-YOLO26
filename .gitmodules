@@ -1,0 +1,6 @@
+[submodule "external/ultralytics"]
+	path = external/ultralytics
+	url = https://github.com/ultralytics/ultralytics.git
+[submodule "external/mobile-yolo"]
+	path = external/mobile-yolo
+	url = https://github.com/surendramaran/YOLO.git
